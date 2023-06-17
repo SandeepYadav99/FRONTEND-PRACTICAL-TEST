@@ -32,7 +32,7 @@ const cartSlice = createSlice({
       }
       state.subtotal += newItem.price * newItem.quantity;
     },
-    
+
     removeToCart: (state, action: PayloadAction<number>) => {
       const itemId = action.payload;
       const index = state.items.findIndex((item) => item.id === itemId);

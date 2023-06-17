@@ -6,6 +6,7 @@ import { cartActions } from '../../store/CartSlice';
 
 const CheckOut = () => {
     const cartItems = useSelector((state: RootState) => state.cart.items);
+    const subtotal = useSelector((state: RootState) => state.cart.subtotal);
     const dispatch = useDispatch();
 
     const handalDelete = () => {
@@ -38,7 +39,8 @@ const CheckOut = () => {
                     })}
 
                 </div>
-                <div className='text-right mr-20 mt-10'>
+                <div className='text-right mr-20 mt-10 flex justify-between'>
+                    <h1 className='ml-20 text-xl text-black'> Total : {subtotal}</h1>
                     <button className='text-white bg-gray-500 p-2 rounded' onClick={() => handalDelete()}>Delete All</button>
                 </div>
             </div>}
