@@ -3,7 +3,7 @@ import Header from "./Header";
 
 const Sidebar = (): JSX.Element => {
     return <div>
-        <ul>
+        <ul className="mt-20">
             <li>
                 <Link to={'/'}>Home</Link>
             </li>

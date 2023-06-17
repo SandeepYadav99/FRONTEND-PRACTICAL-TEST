@@ -3,9 +3,9 @@ import Header from '../../components/Layout/Header'
 
 const CheckOut = () => {
     return (
-        <>
+        < div className='mt-20'>
             <Header />
-            <div className="ml-64">
+            <div className="ml-64 ">
                 <div>
                     <div className='flex justify-around '>
                         <span>id</span>
@@ -30,7 +30,7 @@ const CheckOut = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
