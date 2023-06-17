@@ -6,16 +6,14 @@ import { RootState } from '../../store/store';
 
 const ProductBoard = () => {
     const dispatch = useDispatch();
-    const [quantityInput, setQuantityInput] = useState('');
+    const [quantityInput, setQuantityInput] = useState(0);
     const cartItems = useSelector((state: RootState) => state.cart.items);
-    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-    console.log(totalQuantity, 'Qty')
-
 
     const handleAddToCart = (item: any) => {
-        const updatedQuantity = parseInt(quantityInput) + 1;
-        dispatch(cartActions.addToCart(item));
-        setQuantityInput(updatedQuantity.toString())
+        if (item.quantity < item.maxQuantity) {
+            const updatedItem = { ...item, quantity: item.quantity + 1 };
+            dispatch(cartActions.addToCart(updatedItem));
+        }
     };
 
     const handleRemoveFromCart = (itemId: number) => {
@@ -27,40 +25,28 @@ const ProductBoard = () => {
     };
 
     const handleQuantityChange = (id: any, value: any) => {
-        setQuantityInput(value.toString());
-        dispatch(cartActions.updateCartItemQuantity({ itemId: id, quantity: value }))
-    }
+        const quantity = parseInt(value);
+        if (!isNaN(quantity)) {
+            dispatch(cartActions.updateCartItemQuantity({ itemId: id, quantity }));
+        }
+    };
 
     return (
         <div className='mt-20'>
-            <h1>Product</h1>
+            <h1 className='font-bold text-xl text-center text-2xl'>Product</h1>
             <div className='flex justify-around center flex-wrap items-center w-full  '>
                 {data.items.map((item, index) => {
                     return (
-                        <div className=' mb-4 bg-gray-100 w-[25rem] rounded drop-shadow-md '>
+                        <div className=' mb-4 bg-gray-100 w-[25rem] rounded drop-shadow-md ' key={item.id}>
                             <div className='flex justify-between m-2'>
                                 <h3>{item.name}</h3>
-                                <span> Qty - {item.quantity}</span>
+                                <span> Qty - {item.maxQuantity}</span>
                             </div>
                             <p>{item.des} </p>
-                            <span className='p-2 text-xl'>${item.price}</span>
+                            <span className='p-1 text-xl'>Price : ${item.price}</span>
                             <div className='flex'>
                                 <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleRemoveFromCart(item.id)}>-</button>
-
-                                {/* <input type="text" className='p-2 w-10' value={item.quantity} onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))} />
-                                 */}
-                                <input
-                                    type='number'
-                                    className='p-2 w-10'
-                                    value={item.id === parseInt(quantityInput) ? quantityInput : item.quantity}
-                                    onChange={(e) => {
-                                        const value = parseInt(e.target.value);
-                                        if (!isNaN(value)) {
-                                            setQuantityInput(e.target.value);
-                                        }
-                                    }}
-                                    onBlur={() => handleQuantityChange(item.id, parseInt(quantityInput))}
-                                />
+                                <span className='p-3'>{item.maxQuantity}</span>
                                 <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleAddToCart(item)}>+</button>
                             </div>
                         </div>

@@ -1,11 +1,21 @@
 import React from 'react'
 import Header from '../../components/Layout/Header'
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../store/store';
+import { cartActions } from '../../store/CartSlice';
 
 const CheckOut = () => {
+    const cartItems = useSelector((state: RootState) => state.cart.items);
+    const dispatch = useDispatch();
+
+    const handalDelete = () => {
+        dispatch(cartActions.clearCart())
+    }
+
     return (
         < div className='mt-20'>
             <Header />
-            <div className="ml-64 ">
+            {cartItems.length > 0 && <div className="ml-64 ">
                 <div>
                     <div className='flex justify-around '>
                         <span>id</span>
@@ -14,22 +24,28 @@ const CheckOut = () => {
                         <span>Qty</span>
                         <span>Total</span>
                     </div>
-                    <div className='flex justify-around '>
-                        <span>1</span>
-                        <span>Product 1</span>
-                        <span>100</span>
-                        <span>2</span>
-                        <span>$200</span>
-                    </div>
-                    <div className='flex justify-around '>
-                        <span>2</span>
-                        <span>Product 2</span>
-                        <span>300</span>
-                        <span>2</span>
-                        <span>$600</span>
-                    </div>
+
+                    {cartItems.map((item, index) => {
+                        return (
+                            <div className='flex justify-around '>
+                                <span>{item.id}</span>
+                                <span>{item.name}</span>
+                                <span>{item.price}</span>
+                                <span>{item.quantity}</span>
+                                <span>${item.price * item.quantity}</span>
+                            </div>
+                        )
+                    })}
+
                 </div>
+                <div className='text-right mr-20 mt-10'>
+                    <button className='text-white bg-gray-500 p-2 rounded' onClick={() => handalDelete()}>Delete All</button>
+                </div>
+            </div>}
+            <div className='text-center '>
+                {cartItems.length <= 0  && <h1 className='text-gray-500 text-3xl'>Cart is Empty </h1> }
             </div>
+
         </div>
     )
 }
