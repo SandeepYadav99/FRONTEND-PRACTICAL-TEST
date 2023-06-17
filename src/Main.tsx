@@ -1,8 +1,11 @@
 import React from 'react';
+import DashboardLayout from './app/pages/DashboardLayout/DashboardLayout';
 
 const Main = () => {
     return (
-        <div>Hi</div>
+        <div>
+            <DashboardLayout />
+        </div>
     )
 }
 
