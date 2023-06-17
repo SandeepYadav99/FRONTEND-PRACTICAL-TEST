@@ -13,7 +13,6 @@ const Sidebar = (): JSX.Element => {
             <li>
                 <Link to={'/officeDivice'}>Office Divice</Link>
             </li>
-
         </ul>
     </div>;
 };

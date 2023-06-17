@@ -1,10 +1,10 @@
-import { AnyAction, configureStore } from '@reduxjs/toolkit';
-import { ThunkDispatch } from 'redux-thunk';
-
+import { AnyAction, configureStore } from "@reduxjs/toolkit";
+import { ThunkDispatch } from "redux-thunk";
+import cartSlice from "./CartSlice";
 
 export const store = configureStore({
   reducer: {
- 
+    cart: cartSlice.reducer,
   },
 });
 
