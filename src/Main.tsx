@@ -1,11 +1,17 @@
 import React from 'react';
-import DashboardLayout from './app/pages/DashboardLayout/DashboardLayout';
+import Header from './app/components/Layout/Header';
+import Sidebar from './app/components/Layout/SideBar';
+import ProductBoard from './app/pages/ProductBoard/ProductBoard';
+
 
 const Main = () => {
     return (
-        <div>
-            <DashboardLayout />
-        </div>
+        <>
+            <Header /> 
+            <main className="ml-64">
+                <ProductBoard />
+            </main>
+        </>
     )
 }
 

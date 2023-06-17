@@ -5,6 +5,24 @@ import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './app/store/store';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import CheckOut from './app/pages/CheckOut/CheckOut';
+import OfficeDivice from './app/pages/OfficeDivice/OfficeDivice';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main />,
+  },
+  {
+    path: "/checkout",
+    element: <CheckOut />,
+  },
+  {
+    path: "/officeDivice",
+    element: <OfficeDivice />,
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +30,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Main />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
