@@ -1,5 +1,5 @@
-import CheckOut from "../../pages/CheckOut/CheckOut";
-import { RootState } from "../../store/store";
+import CheckOut from "../pages/CheckOut/CheckOut";
+import { RootState } from "../store/store";
 import Sidebar from "./SideBar";
 import { useSelector } from 'react-redux'
 const Header = (): JSX.Element => {

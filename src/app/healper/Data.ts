@@ -6,7 +6,7 @@ const data = {
       des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
       price: 15,
       quantity: 0,
-       maxQuantity: 1
+       maxQuantity: 21
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const data = {
 
       price: 150,
       quantity: 0,
-       maxQuantity: 1
+       maxQuantity: 3
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ const data = {
    
       price: 40,
       quantity: 0,
-       maxQuantity: 1
+       maxQuantity: 11
     },
     {
       id: 6,

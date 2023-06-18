@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../components/Layout/Header'
+import Header from '../../components/Header'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
 import { cartActions } from '../../store/CartSlice';
@@ -45,7 +45,7 @@ const CheckOut = () => {
                 </div>
             </div>}
             <div className='text-center '>
-                {cartItems.length <= 0  && <h1 className='text-gray-500 text-3xl'>Cart is Empty </h1> }
+                {cartItems.length <= 0 && <h1 className='text-gray-500 text-3xl'>Cart is Empty </h1>}
             </div>
 
         </div>

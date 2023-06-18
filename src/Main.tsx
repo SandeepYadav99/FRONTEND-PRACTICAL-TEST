@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './app/components/Layout/Header';
+import Header from './app/components/Header';
 import ProductBoard from './app/pages/ProductBoard/ProductBoard';
 
 const Main = (): JSX.Element => {

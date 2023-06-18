@@ -4,11 +4,20 @@ import data from '../../healper/Data'
 import { cartActions } from '../../store/CartSlice';
 import { RootState } from '../../store/store';
 
+interface Item {
+    id: number;
+    name: string;
+    quantity: number;
+    des: string;
+    price: number;
+    maxQuantity: number;
+}
+
 const ProductBoard = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector((state: RootState) => state.cart.items);
 
-    const handleAddToCart = (item: any) => {
+    const handleAddToCart = (item: Item) => {
         if (item.quantity < item.maxQuantity) {
             const updatedItem = { ...item, quantity: item.quantity + 1 };
             dispatch(cartActions.addToCart(updatedItem));
@@ -22,13 +31,6 @@ const ProductBoard = () => {
             dispatch(cartActions.updateCartItemQuantity({ itemId, quantity: newQuantity }));
         }
     };
-
-    // const handleQuantityChange = (id: any, value: any) => {
-    //     const quantity = parseInt(value);
-    //     if (!isNaN(quantity)) {
-    //         dispatch(cartActions.updateCartItemQuantity({ itemId: id, quantity }));
-    //     }
-    // };
 
     return (
         <div className='mt-20'>
@@ -45,7 +47,10 @@ const ProductBoard = () => {
                             <span className='p-1 text-xl'>Price : ${item.price}</span>
                             <div className='flex'>
                                 <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleRemoveFromCart(item.id)}>-</button>
-                                <span className='p-3'>{}</span>
+                                <span className='p-3'>
+                                    {cartItems.find((cartItem) => cartItem.id === item.id)?.quantity || 0}
+                                </span>
+
                                 <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleAddToCart(item)}>+</button>
                             </div>
                         </div>
