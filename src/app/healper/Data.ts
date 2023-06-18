@@ -3,7 +3,7 @@ const data = {
     {
       id: 1,
       name: "Tomato",       
-      des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
+      des:'  Lorem ipsum, ds odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
       price: 15,
       quantity: 0,
        maxQuantity: 21
@@ -11,7 +11,7 @@ const data = {
     {
       id: 2,
       name: "Potato",
-     des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
+     des:'  Lorem ipsum, do odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
       price: 20,
       quantity: 0,
        maxQuantity: 2
@@ -19,7 +19,7 @@ const data = {
     {
       id: 3,
       name: "Cabbage",
-      des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
+      des:'  Lorem ipsum, ds odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
       price: 50,
       quantity: 0,
        maxQuantity: 5
@@ -28,25 +28,7 @@ const data = {
     {
       id: 4,
       name: "Brokoli",
-     des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
-
-      price: 150,
-      quantity: 0,
-       maxQuantity: 3
-    },
-    {
-      id: 5,
-      name: "Apple",
-     des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
-   
-      price: 40,
-      quantity: 0,
-       maxQuantity: 11
-    },
-    {
-      id: 6,
-      name: "Guava",
-       des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
+      des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
       price: 30,
       quantity: 0,
        maxQuantity: 6
@@ -54,7 +36,7 @@ const data = {
     {
       id: 7,
       name: "Orange",
-      des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
+      des:'  Lorem ipsum, ds odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
       price: 30,
       quantity: 0,
       maxQuantity: 3
@@ -62,7 +44,7 @@ const data = {
     {
       id: 8,
       name: "Litchi",
-      des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus explicabo quibusdam quam? Dolores rem fugit fugiat alias magni voluptas sequi deleniti veritatis.',
+      des:'  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, illo aperiam. Laboriosam ducimus odit, ipsum perspiciatis repellendus expli veritatis.',
    
       price: 30,
       quantity: 0,

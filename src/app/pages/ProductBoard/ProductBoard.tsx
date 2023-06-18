@@ -34,7 +34,7 @@ const ProductBoard = () => {
 
     return (
         <div className='mt-20'>
-            <h1 className='font-bold text-xl text-center text-2xl'>Product</h1>
+            <h1 className='font-bold  text-center text-2xl'>Product</h1>
             <div className='flex justify-around center flex-wrap items-center w-full  '>
                 {data.items.map((item, index) => {
                     return (

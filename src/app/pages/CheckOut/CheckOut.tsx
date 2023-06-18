@@ -28,7 +28,7 @@ const CheckOut = () => {
 
                     {cartItems.map((item, index) => {
                         return (
-                            <div className='flex justify-around '>
+                            <div className='flex justify-around ' key={item.id}>
                                 <span>{item.id}</span>
                                 <span>{item.name}</span>
                                 <span>{item.price}</span>
