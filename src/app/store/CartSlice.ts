@@ -39,17 +39,7 @@ const cartSlice = createSlice({
       }
     },
 
-    removeToCart: (state, action: PayloadAction<number>) => {
-      const itemId = action.payload;
-      const index = state.items.findIndex((item) => item.id === itemId);
-      if (index !== -1) {
-        const itemToRemove = state.items[index];
-        state.items.splice(index, 1);
-        state.subtotal -= itemToRemove.price * itemToRemove.quantity;
-      }
-    },
-
-    updateCartItemQuantity: (
+    removeToCart: (
       state,
       action: PayloadAction<{ itemId: number; quantity: number }>
     ) => {

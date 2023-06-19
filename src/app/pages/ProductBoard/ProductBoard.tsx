@@ -28,7 +28,7 @@ const ProductBoard = () => {
         const item = cartItems.find((item) => item.id === itemId);
         if (item && item.quantity > 1) {
             const newQuantity = item.quantity - 1;
-            dispatch(cartActions.updateCartItemQuantity({ itemId, quantity: newQuantity }));
+            dispatch(cartActions.removeToCart({ itemId, quantity: newQuantity }));
         }
     };
 
@@ -45,13 +45,17 @@ const ProductBoard = () => {
                             </div>
                             <p>{item.des} </p>
                             <span className='p-1 text-xl'>Price : ${item.price}</span>
-                            <div className='flex'>
-                                <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleRemoveFromCart(item.id)}>-</button>
-                                <span className='p-3'>
-                                    {cartItems.find((cartItem) => cartItem.id === item.id)?.quantity || 0}
-                                </span>
-
-                                <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleAddToCart(item)}>+</button>
+                            <div className='flex justify-between text-center m-2'>
+                                <div>
+                                    <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleRemoveFromCart(item.id)}>-</button>
+                                    <span className='p-3'>
+                                        {cartItems.find((cartItem) => cartItem.id === item.id)?.quantity || 0}
+                                    </span>
+                                    <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleAddToCart(item)}>+</button>
+                                </div>
+                                <div>
+                                    <button className=' text-xl border px-3 py-2 bg-gray-400 text-black rounded'>DELETE</button>
+                                </div>
                             </div>
                         </div>
                     )
