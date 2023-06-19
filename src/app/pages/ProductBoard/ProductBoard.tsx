@@ -53,9 +53,6 @@ const ProductBoard = () => {
                                     </span>
                                     <button className='font-bold text-xl border px-3 py-2 bg-gray-400 text-black' onClick={() => handleAddToCart(item)}>+</button>
                                 </div>
-                                <div>
-                                    <button className=' text-xl border px-3 py-2 bg-gray-400 text-black rounded'>DELETE</button>
-                                </div>
                             </div>
                         </div>
                     )
